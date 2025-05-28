@@ -102,4 +102,5 @@ f, ax = plt.subplots()
 for i in range(N):
     ax.plot(t, NormXs[:, i])
     # ax.axhline(-eigv[i, 1], linestyle="-.")
+ax.set_ylabel("$v_2$")
 plt.show()
