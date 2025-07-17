@@ -53,11 +53,9 @@ def iterOnceFordsV2(D, Dk_til, connectivity_est, beta):
     #             if D[i, k] != 0:
     #                 dij += D[i, k] * Dk_til[k, j]
     #         Dk1[i, j] = dij
-    # Dk1 = D @ Dk_til
     # return (Dk1 - 1 / N) / (1 - beta * connectivity_est) + 1 / N
-    Dk1 = (D - 1 / N) @ (Dk_til - 1 / N)
-    r = Dk1 / (1 - beta * connectivity_est) + 1 / N
-    return r
+
+    return (D @ Dk_til - 1 / N) / (1 - beta * connectivity_est) + 1 / N
 
 
 def ciTolambda2(ck_til, beta):

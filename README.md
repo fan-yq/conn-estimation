@@ -1,10 +1,21 @@
 # Distributed Connectivity Estimation
 
-**Review Only**
-
 ## File Overview
 
-This repository contains figures and code corresponding to the experiments described in the paper.
+This repository contains figures and code corresponding to the experiments described in the paper: **Discrete Distributed Estimation of Algebraic Connectivity and Fiedler Vector**.
+
+## Errata
+
+The Equation (9):
+$$
+        \boldsymbol{\tilde{d}}_i^k=\frac{\sum_{j=1}^n(d_{ij}-1/n)(\boldsymbol{\tilde{d}}_j^{k-1}-\boldsymbol{1}/n)}{1-\beta\hat{\lambda}_{2}(k-1)}+\boldsymbol{1}/n 
+$$
+should be:
+$$
+    \boldsymbol{\tilde{d}}_i^k=\frac{\sum_{j=1}^nd_{ij}\boldsymbol{\tilde{d}}_j^{k-1}-\boldsymbol{1}/n}{1-k_L\hat{\lambda}_{2}(k-1)}+\boldsymbol{1}/n
+$$
+
+The former requires the global knowledge of $\tilde {d}_i^k$, while the latter one does not. And they are equivalent as: $C^k = (D - \boldsymbol{11}^\top/n)^k = D^k - \boldsymbol{11}^\top/n.$
 
 ### Simulation Scripts in the Paper
 
@@ -50,7 +61,19 @@ To assess average-case performance, several test scenarios from prior works are 
 
 Note: there are no formal analysis for time-varying graph.
 
+## Cite
 
+```
+@ARTICLE{11047532,
+  author={Fan, Yuanqiao and Deng, Xiaolong and Yang, Xixiang and Liu, Minyu and Bai, Fangchao},
+  journal={IEEE Control Systems Letters}, 
+  title={Discrete Distributed Estimation of Algebraic Connectivity and Fiedler Vector}, 
+  year={2025},
+  volume={9},
+  number={},
+  pages={1616-1621},
+  doi={10.1109/LCSYS.2025.3582204}}
+```
 
 
 ## Reference
